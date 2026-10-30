@@ -1,0 +1,14 @@
+# Ollama Modelfile for the local Ashvon Qwen2.5 assistant.
+#
+# Place your authorized Qwen2.5 GGUF file in this directory and name it:
+# qwen2.5-7b-instruct-q4_K_M.gguf
+#
+# If your file has a different name or location, update the FROM path below.
+FROM ./qwen2.5-7b-instruct-q4_K_M.gguf
+
+# Conservative settings for grounded question answering.
+PARAMETER temperature 0.1
+PARAMETER top_p 0.8
+PARAMETER num_ctx 8192
+
+SYSTEM You are a helpful local language model. Follow the application system instructions and answer only from the supplied Ashvon Technologies website context. If the context does not contain the answer, clearly say so. Do not invent facts.
